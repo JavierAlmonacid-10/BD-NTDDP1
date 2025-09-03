@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto de Búsqueda - Konrad Lorenz</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <!-- Logo Universidad FK -->
+          <a class="navbar-brand" href="#">
+          <img src="logo-FK.png" alt="Logo Universidad" style="height: 80px;">
+        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#tema">Tema</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tabla">Búsquedas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#articulos">Artículos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero -->
+  <header>
+    <div class="container">
+      <h1>Proyecto de Búsqueda Científica</h1>
+      <p class="lead">Nuevas tecnologías de desarrollo</p>
+      <p class="lead">Universidad Konrad Lorenz - Bases de Datos</p>
+    </div>
+  </header>
+
+  <!-- Tema -->
+  <section id="tema" class="container my-5">
+    <h2 class="mb-4 text-primary">Tema Seleccionado</h2>
+    <p><strong>Nombre del tema:</strong> Inteligencia Artificial en la Educación</p>
+    <p><strong>Descripción:</strong> El uso de herramientas de IA en procesos de enseñanza-aprendizaje y su impacto en los estudiantes.</p>
+    <p><strong>Motivación:</strong> La IA está transformando la forma en que aprendemos y enseñamos, lo cual es relevante para nuestra formación.</p>
+  </section>
+
+  <!-- Tabla de búsquedas -->
+  <section id="tabla" class="container my-5">
+    <h2 class="mb-4 text-primary">Cadenas de Búsqueda</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead class="table-primary">
+          <tr>
+            <th>Estudiante</th>
+            <th>Base de Datos</th>
+            <th>Cadena de Búsqueda</th>
+            <th>Resultados</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Daniel Mamsela</td>
+            <td>Scopus</td>
+            <td>"Artificial Intelligence" AND "Higher Education"</td>
+            <td>6.058</td>
+          </tr>
+          <tr>
+            <td>Javier Almonacid</td>
+            <td>Scopus</td>
+            <td>"cybersecurity" OR "Machine Learning" OR "Programming" AND "Higher Education"</td>
+            <td>5.957</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Buscador -->
+  <div class="container my-4">
+    <input type="text" id="buscador" onkeyup="buscarArticulos()" 
+           class="form-control" placeholder="Buscar artículos...">
+  </div>
+
+  <!-- Artículos -->
+  <section id="articulos" class="container my-5">
+    <h2 class="mb-4 text-primary">Artículos Seleccionados</h2>
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Inteligencia artificial e investigación formativa: una revisión crítica desde la realidad universitaria</h5>
+            <p><strong>Autores:</strong> Morales Romero, Guillermo Pastor<br>
+               <strong>Año:</strong> 2025<br>
+               <strong>Fuente:</strong> Departamento de Matemática e Informática, Facultad de Ciencias, Universidad Nacional de Educación Enrique Guzmán y Valle, Perú</p>
+            <button class="btn btn-sm btn-outline-primary" onclick="toggleResumen('resumen1')">
+              Ver Resumen
+            </button>
+            <p id="resumen1" style="display:none;" class="small">
+
+              El artículo *“Inteligencia Artificial y la investigación formativa:
+            una revisión crítica a partir de la realidad universitaria”* (Morales Romero, 2025) 
+            analiza cómo la inteligencia artificial se ha convertido en una herramienta clave para 
+            fortalecer el aprendizaje y la investigación formativa en la educación superior. 
+            A través de un estudio cuantitativo correlacional con 60 estudiantes de la Universidad Nacional de Educación 
+            Enrique Guzmán y Valle (Perú), se encontró una relación significativa (p = 0,000) entre el uso de la IA y el desarrollo
+            de competencias investigativas. Los resultados evidencian que la IA facilita el acceso a información, 
+            mejora los procesos de análisis y fomenta la generación de conocimiento; sin embargo, 
+            también plantea riesgos relacionados con desigualdades tecnológicas, 
+            privacidad de datos y dependencia excesiva de estas herramientas. 
+            En conclusión, la IA representa un aliado valioso para la formación académica e investigativa 
+            siempre que se utilice de manera crítica, ética y responsable.
+            </p>
+            <span class="badge bg-primary">Daniel</span>
+            <span class="badge bg-success">Higher Education</span>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Inteligencia artificial, competencia digital y aficiones personales: implicaciones para la educación superior</h5>
+            <p><strong>Autores:</strong> López-Secanell, Irene;Gamero-Sandemetrio, Esther;López-Requena, Estefanía<br>
+               <strong>Año:</strong> 2025<br>
+               <strong>Fuente:</strong> Pixel-Bit, Revista de Medios y Educacion</p>
+            <button class="btn btn-sm btn-outline-primary" onclick="toggleResumen('resumen2')">
+              Ver Resumen
+            </button>
+            <p id="resumen2" style="display:none;" class="small">
+
+              El artículo analiza la relación entre competencia digital, aficiones personales y uso de la inteligencia artificial (IA) en la educación superior a partir
+              de un estudio con 244 participantes (74 docentes y 170 estudiantes) de universidades españolas, 
+              encontrando que no hay diferencias notables en las aficiones relacionadas con la IA, aunque predominan las no tecnológicas; 
+              los estudiantes emplean más herramientas de IA mientras los docentes generan más contenido con ellas; 
+              el alumnado de Educación Primaria presenta mayores niveles de competencia digital en diversas áreas; 
+              existen diferencias entre universidades en la creación de contenido digital; y no se hallaron diferencias significativas de género, 
+              lo que permite comprender mejor el papel de la IA en la educación superior desde una visión competencial y contextual.
+            </p>
+            <span class="badge bg-primary">Daniel</span>
+            <span class="badge bg-success">Higher Education</span>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">El papel de la Inteligencia Artificial en la personalización de la educación a distancia: una revisión sistemática</h5>
+            <p><strong>Autores:</strong> Romero Alonso, Rosa;Araya Carvajal, Katherine;Reyes Acevedo, Natalia<br>
+               <strong>Año:</strong> 2025<br>
+               <strong>Fuente:</strong>RIED-Revista Iberoamericana de Educacion a Distancia</p>
+            <button class="btn btn-sm btn-outline-primary" onclick="toggleResumen('resumen3')">
+              Ver Resumen
+            </button>
+            <p id="resumen3" style="display:none;" class="small">
+
+              El artículo presenta una revisión sistemática de 65 estudios publicados entre 2018 y 2023 sobre el uso de la inteligencia artificial (IA) 
+              en la personalización del aprendizaje en la educación a distancia, encontrando que esta tecnología se aplica tanto fuera del aula, 
+              a través de modelos predictivos de éxito académico y apoyos extracurriculares, 
+              como dentro del currículo mediante sistemas de recomendación y retroalimentación personalizada; 
+              los resultados muestran que la IA se adapta a distintas disciplinas y niveles educativos, 
+              con especial énfasis en la educación superior, y ofrece potencial para atender necesidades educativas especiales, 
+              consolidándose como una herramienta clave para la adaptación y personalización de los sistemas educativos virtuales.
+            </p>
+            <span class="badge bg-primary">Daniel</span>
+            <span class="badge bg-success">Higher Education</span>
+          </div>
+        </div>
+      </div>
+            <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Desarrollo y experiencia de usuario de una herramienta de simulación de realidad virtual basada en objetos tridimensionales para la formación en radiografía dental: un ensayo controlado aleatorio</h5>
+            <p><strong>Autores:</strong> Ji-Eun, Ja-Young, Jung-Hee, Jae-Gi<br>
+               <strong>Año:</strong> 2025<br>
+               <strong>Fuente:</strong> Departamento de Higiene Dental, Escuela de Posgrado de la Universidad de Namseoul, Cheonan, Corea del Sur</p>
+            <button class="btn btn-sm btn-outline-primary" onclick="toggleResumen('resumen4')">
+              Ver Resumen
+            </button>
+            <p id="resumen4" style="display:none;" class="small">
+
+              El artículo “Desarrollo y experiencia de usuario de una herramienta de simulación de realidad virtual basada en objetos tridimensionales para la formación en radiografía dental: un ensayo controlado aleatorio” 
+              (Im et al., 2025) presenta el diseño y evaluación de 3DOVR-DR, una herramienta de realidad virtual basada en objetos 
+              3D para mejorar la enseñanza de radiografía dental. Mediante un ensayo controlado aleatorizado con 79 estudiantes de higiene dental de Corea, divididos 
+              en dos grupos (video 360° vs. simulación 3D interactiva), se analizó la experiencia de usuario tras seis semanas de práctica guiada. Los resultados muestran
+              diferencias significativas (p menores a 0,001) a favor del grupo experimental, destacando mejoras en comprensión, motivación, interacción y disfrute del 
+              aprendizaje (promedio 4,35 frente a 3,63). El estudio evidencia que la realidad virtual interactiva permite prácticas seguras, repetitivas y autónomas, 
+              reduciendo la exposición a radiación y facilitando la adquisición de habilidades clínicas. No obstante, los autores señalan limitaciones como la ausencia de 
+              análisis directo del impacto en competencias prácticas y la falta de diversidad en la muestra, recomendando investigaciones futuras más amplias. En conclusión, 
+              3DOVR-DR es una herramienta prometedora que puede transformar la enseñanza de la radiografía dental si se integra de manera planificada y complementaria a la formación presencial.
+            </p>
+            <span class="badge bg-primary">Javier</span>
+            <span class="badge bg-success">Higher Education</span>
+          </div>
+        </div>
+      </div>
+            <!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Investigación del impacto de la integración de IA generativa en el mantenimiento de habilidades de pensamiento de orden superior y la comprensión de la lógica de programación.</h5>
+            <p><strong>Autores:</strong> Jemimah Nathaniel, Solomon Sunday Oyelere, Jarkko Suhonen, Matti Tedre<br>
+               <strong>Año:</strong> 2025<br>
+               <strong>Fuente:</strong> Escuela de Computación, Universidad del Este de Finlandia, Joensuu, FIN-80101, Finlandia</p>
+            <button class="btn btn-sm btn-outline-primary" onclick="toggleResumen('resumen5')">
+              Ver Resumen
+            </button>
+            <p id="resumen5" style="display:none;" class="small">
+
+              El estudio explora cómo integrar IA generativa (GenAI) con andamiaje instruccional y técnicas de ingeniería 
+              de indicaciones para mejorar el pensamiento de orden superior (HOTS) y la lógica de programación. 
+              Con un diseño de métodos mixtos y una intervención de siete semanas en 25 estudiantes sin experiencia en C++, se aplicó el marco GenAI-Ped, 
+              basado en Bloom, aprendizaje autorregulado y la teoría de Vygotsky. Los resultados muestran avances significativos en resolución de problemas, 
+              pensamiento crítico, creatividad y lógica de programación, aunque con mejoras menores en optimización y evaluación de código. El estudio concluye que GenAI, 
+              usado con apoyo pedagógico estructurado, potencia el aprendizaje de programación y ofrece un modelo práctico para integrar IA en la educación.
+
+            </p>
+            <span class="badge bg-primary">Javier</span>
+            <span class="badge bg-success">Higher Education</span>
+          </div>
+        </div>
+      </div>
+            <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Evaluación de la percepción de los programadores novatos sobre ChatGPT: rendimiento, riesgo, toma de decisiones e intenciones</h5>
+            <p><strong>Autores:</strong> Miranda, John Paul P., Yambao, Jaymark A<br>
+               <strong>Año:</strong> 2025<br>
+               <strong>Fuente:</strong> Facultad de Estudios de Computación, Campus México, Universidad Estatal Don Honorio Ventura, México, Filipinas</p>
+            <button class="btn btn-sm btn-outline-primary" onclick="toggleResumen('resumen6')">
+              Ver Resumen
+            </button>
+            <p id="resumen6" style="display:none;" class="small">
+              El estudio examina la intención de uso de ChatGPT por parte de programadores novatos en tareas de programación, 
+              centrándose en la expectativa de rendimiento, la evaluación de riesgos y beneficios, y la toma de decisiones. 
+              Con datos de 413 participantes y mediante modelado PLS-SEM, se encontró que una mayor expectativa de rendimiento de ChatGPT 
+              está asociada con mejoras en la toma de decisiones y en el aprendizaje de los estudiantes. Además, quienes perciben un balance 
+              positivo entre riesgos y beneficios toman decisiones más seguras y eficaces, reconociendo riesgos, pero priorizando beneficios como la 
+              resolución rápida de problemas y el aprendizaje de nuevas técnicas. Una percepción positiva del papel de ChatGPT en la toma de decisiones 
+              incrementa significativamente la disposición a usarlo, destacando la importancia de estas percepciones para promover la adopción de herramientas de 
+              inteligencia artificial en la educación en programación.
+
+            </p>
+            <span class="badge bg-primary">Javier</span>
+            <span class="badge bg-success">Higher Education</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 - Proyecto de Búsqueda Científica | Konrad Lorenz</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script propio -->
+  <script src="script.js"></script>
+</body>
+</html>
