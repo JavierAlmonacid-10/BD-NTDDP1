@@ -30,21 +30,19 @@ function buscarArticulos() {
 
     if (textoPlano.includes(input)) {
       cards[i].style.display = "block";
-
-      // Resaltar coincidencias en el texto de la card
       resaltarTexto(cards[i], input);
     } else {
       cards[i].style.display = "none";
     }
   }
+  actualizarContador();
 }
 
 function resaltarTexto(elemento, palabra) {
   let regex = new RegExp(`(${palabra})`, "gi");
 
-  for (let nodo of elemento.childNodes) {
+  for (let nodo of Array.from(elemento.childNodes)) {
     if (nodo.nodeType === 3) {
-      // Es un nodo de texto
       let texto = nodo.nodeValue;
       if (texto.toLowerCase().includes(palabra)) {
         let span = document.createElement("span");
@@ -52,11 +50,71 @@ function resaltarTexto(elemento, palabra) {
         elemento.replaceChild(span, nodo);
       }
     } else {
-      // Recursivo: revisar hijos
       resaltarTexto(nodo, palabra);
     }
   }
 }
+
+// ====== 3. Filtrar por autor ======
+function filtrarPorAutor(nombre) {
+  let cards = document.getElementsByClassName("card");
+  let contador = 0;
+
+  for (let i = 0; i < cards.length; i++) {
+    let textoPlano = cards[i].innerText.toLowerCase();
+    if (textoPlano.includes(nombre.toLowerCase())) {
+      cards[i].style.display = "block";
+      contador++;
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+  document.getElementById("contador").innerText = contador;
+}
+
+// Mostrar todos
+function mostrarTodos() {
+  let cards = document.getElementsByClassName("card");
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].style.display = "block";
+  }
+  document.getElementById("contador").innerText = cards.length;
+}
+
+// ====== 4. Contador dinámico de artículos ======
+function actualizarContador() {
+  let cards = document.getElementsByClassName("card");
+  let visibles = 0;
+  for (let i = 0; i < cards.length; i++) {
+    if (cards[i].style.display !== "none") {
+      visibles++;
+    }
+  }
+  document.getElementById("contador").innerText = visibles;
+}
+
+// Llamar contador al cargar
+window.onload = actualizarContador;
+
+// ====== 5. Botón "Volver Arriba" ======
+window.onscroll = function() {
+  let btn = document.getElementById("btnArriba");
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
+
+function scrollArriba() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ====== 6. Modo oscuro/claro ======
+function toggleModoOscuro() {
+  document.body.classList.toggle("modo-oscuro");
+}
+
 
 
 
